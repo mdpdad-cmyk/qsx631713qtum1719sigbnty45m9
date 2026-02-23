@@ -2,17 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-  // Choose your password below
+<script>
   var password = "q63"; 
-  
   var response = prompt("This site is private. Please enter the password:");
 
   if (response !== password) {
-    // If they get it wrong, clear the page and send them to Google
+    // 1. Alert the user
     alert("Incorrect password.");
-    document.body.innerHTML = ""; 
-    window.location.href = "https://www.google.com";
+    // 2. Immediately stop the page from loading anything else
+    window.stop(); 
+    // 3. Clear the screen so it's blank
+    document.documentElement.innerHTML = ""; 
+    // 4. Send them away
+    window.location.replace("https://www.google.com");
   }
 </script>   
     <meta charset="UTF-8">
